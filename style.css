@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #001f3f; /* Fundo azul escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+/* Splash Screen */
+.splash-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #001f3f;
+    animation: fadeOut 0.3s ease-in-out forwards;
+    animation-delay: 2.2s;
+}
+
+.splash-screen img {
+    width: 100%; /* Aumenta a largura da imagem para 100% da tela */
+    max-width: 600px; /* Define uma largura máxima */
+    height: auto; /* Mantém a proporção da imagem */
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+/* Animação de Fade In e Fade Out */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* Menu Principal */
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInMenu 0.5s ease-in-out forwards;
+    animation-delay: 0.5s; /* Reduzido para 1.5 segundos */
+    background-color: #001f3f; /* Fundo azul escuro para o menu */
+    width: 100%;
+    height: 100vh;
+}
+
+@keyframes fadeInMenu {
+    to {
+        opacity: 1;
+    }
+}
+
+.menu h1 {
+    font-size: 32px;
+    color: white; /* Texto em branco */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #001f3f; /* Fundo azul escuro igual ao menu */
+    padding: 10px; /* Espaçamento em volta do título */
+    border-radius: 8px; /* Bordas arredondadas */
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    margin: 15px 0;
+}
+
+.menu button {
+    width: 350px; /* Largura dos botões */
+    padding: 20px 40px; /* Mais espaço interno nos botões */
+    background-color: white; /* Botões brancos */
+    color: #001f3f; /* Texto escuro */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex; /* Torna o conteúdo flexível */
+    align-items: center; /* Alinha o número e o texto no centro */
+    gap: 20px; /* Espaçamento entre o número e o texto */
+}
+
+.menu button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-5px);
+}
+
+/* Números circulares */
+.circle {
+    background-color: #001f3f; /* Fundo azul escuro para os números */
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+/* Mobile Responsivo */
+@media (max-width: 600px) {
+    .menu h1 {
+        font-size: 24px;
+    }
+
+    .menu button {
+        width: 100%; /* Botão ocupa toda a largura em telas pequenas */
+        font-size: 16px;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
